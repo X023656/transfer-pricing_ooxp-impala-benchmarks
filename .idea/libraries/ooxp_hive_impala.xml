@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="ooxp_hive_impala">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/lib/ooxp_hive_impala" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/ooxp_hive_impala" recursive="false" />
+  </library>
+</component>

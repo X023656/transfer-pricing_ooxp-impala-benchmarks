@@ -1,0 +1,18 @@
+environment: dev2
+general:
+  concurrency: 6
+  app-name: ooxp-impala-benchmarks
+hadoop:
+  root: ${user.dir}/etc/${environment}
+  hBase-site: ${hadoop.root}/hadoop-conf/hbase-site.xml
+  core-site: ${hadoop.root}/hadoop-conf/hbase-site.xml
+  jaas-file: ${hadoop.root}/jaas.conf
+  krb5-file: ${hadoop.root}/krb5.conf
+  key-tab: /appserver/kerberos_keytab/ooxp.keytab
+  hBase-nameSpace: ooxpdev
+  hbase-instances-table: ooxpdev:instances
+  hadoop-user: bigdata-app-ooxpdev-service@INTQA.THOMSONREUTERS.COM
+  bin-dir: ${user.dir}
+  impala-database: ooxpdev
+  impala-connection-url: jdbc:impala://hadoop-ooxpintpln.int.thomsonreuters.com:21050/${hadoop.impala-database};SYNC_DDL=1;AuthMech=1;KrbRealm=INTQA.THOMSONREUTERS.COM;KrbHostFQDN=hadoop-ooxpintpln.int.thomsonreuters.com;KrbServiceName=impala
+  impala-jdbc-driver: com.cloudera.impala.jdbc41.Driver

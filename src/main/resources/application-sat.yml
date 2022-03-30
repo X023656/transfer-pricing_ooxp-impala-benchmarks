@@ -1,0 +1,15 @@
+general:
+  concurrency: 3
+  app-name: ooxp-data-migration
+hadoop:
+  root: ${user.dir}/etc/sat
+  key-tab: ${hadoop.root}/ooxp.keytab
+  jaas-file: ${hadoop.root}/jaas.conf
+  krb5-file: ${hadoop.root}/krb5.conf
+  hBase-site: ${hadoop.root}/hbase-conf/hbase-site.xml
+  hBase-nameSpace: ooxp_sat
+  hbase-instances-table: ooxp_sat:instances
+  hadoop-user: bigdata-app-ooxp-service@INTQA.THOMSONREUTERS.COM
+  bin-dir: ${user.dir}
+  impala-connection-url: jdbc:impala://hadoop-ooxpintpln.int.thomsonreuters.com:21050/ooxp_sat;SYNC_DDL=1;AuthMech=1;KrbRealm=INTQA.THOMSONREUTERS.COM;KrbHostFQDN=hadoop-ooxpintpln.int.thomsonreuters.com;KrbServiceName=impala
+  impala-jdbc-driver: com.cloudera.impala.jdbc41.Driver

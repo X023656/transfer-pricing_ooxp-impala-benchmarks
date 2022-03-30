@@ -1,0 +1,27 @@
+general:
+  concurrent-entities: 3
+hbase:
+  root: /appserver/config/hbase/prod
+  key-tab: /appserver/kerberos_keytab/ooxp.keytab
+  jaas-file: ${hbase.root}/jaas.conf
+  krb5-file: /etc/krb5.conf
+  hBase-site: ${hbase.root}/hbase-conf/hbase-site.xml
+  hBase-nameSpace: ooxp
+  hbase-instances-table: ooxp:instances
+  hadoop-user: bigdata-app-ooxp-service@ECOM.TLRG.COM
+  bin-dir: ${user.dir}
+es:
+  hostname: prod-es-trta-ooxp.int.thomsonreuters.com
+  port: 443
+  protocol: https
+  username: ooxp-amer1-readwrite
+  password: lwLYnTJvqT8AHqKqNAberg==
+  prefix: ooxp-amer2
+  shards: 1
+  replicas: 1
+  retries: 10
+  reindex-suffix: runid
+  default-batch-size: 1000
+  mappings-dir: mappings/
+  cluster-name: prod-es-trta-ooxp
+  reporting-index: ooxp-amer2-rebuild-status
