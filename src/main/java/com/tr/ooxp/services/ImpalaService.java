@@ -8,4 +8,5 @@ public interface ImpalaService {
 
     List<String> getAllTables() throws SQLException;
 
+    int count(String table);
 }

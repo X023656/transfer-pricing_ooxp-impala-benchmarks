@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import static org.apache.commons.lang.StringUtils.isEmpty;
 import static org.apache.commons.lang.StringUtils.removeEnd;
@@ -40,6 +41,13 @@ public class ImpalaServiceImpl implements ImpalaService {
     @Override
     public List<String> getAllTables() throws SQLException {
         return getTables("");
+    }
+
+    final Random random = new Random();
+
+    @Override
+    public int count(String table) {
+        return Math.abs(random.nextInt(3000000));
     }
 
 }

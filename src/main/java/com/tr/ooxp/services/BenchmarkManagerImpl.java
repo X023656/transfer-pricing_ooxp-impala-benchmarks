@@ -43,15 +43,16 @@ public class BenchmarkManagerImpl implements BenchmarkManager {
 
         for (String table : impalaTables) {
 
-            System.out.println(table);
-
             Instant begin = Instant.now();
+
+            int count = impalaService.count(table);
+
             long duration = Duration.between(begin, Instant.now()).getSeconds();
-            System.out.printf("%s complete. Took %d seconds\n", table, duration);
-            sb.append(String.format("%s,%d\n", table, duration));
+
+            System.out.printf("%s complete. count: %d   Took %d seconds\n", table, count, duration);
+            sb.append(String.format("%s,%d,%d\n", table, count, duration));
             moved++;
         }
-
 
         System.out.println("=========================================================");
         System.out.println("Table,Rows,Duration");
@@ -60,6 +61,8 @@ public class BenchmarkManagerImpl implements BenchmarkManager {
         System.out.printf(" Locators: %d     Moved: %d     Table not present: %d   Total time: %.2f mins\n",
                 moved + notPresent, moved, notPresent, Duration.between(start, Instant.now()).getSeconds() / 60f);
         System.out.println("=========================================================");
+
+        // write logic here
     }
 
 }

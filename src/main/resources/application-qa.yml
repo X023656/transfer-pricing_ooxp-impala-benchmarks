@@ -1,6 +1,7 @@
 general:
-  concurrent-entities: 3
-hbase:
+  concurrency: 3
+  app-name: ooxp-data-migration
+hadoop:
   root: /opt/cloudera/parcels/CDH/lib/hbase/conf
   hBase-site: ${hbase.root}/hbase-site.xml
   jaas-file: ${hbase.root}/jaas.conf
@@ -10,18 +11,3 @@ hbase:
   hbase-instances-table: ooxpqa:instances
   hadoop-user: bigdata-app-ooxpqa-service@INTQA.THOMSONREUTERS.COM
   bin-dir: ${user.dir}
-es:
-  hostname: qa-ooxp-trtra-es.int.thomsonreuters.com
-  port: 443
-  protocol: https
-  username: ooxp-qa-rw
-  password: aujnKT6kiP8sUCPB5Ssmfw==
-  prefix: ooxp-qa
-  shards: 1
-  replicas: 1
-  retries: 10
-  reindex-suffix: runid
-  default-batch-size: 1000
-  mappings-dir: mappings/
-  cluster-name: qa-es-trta-ooxp
-  reporting-index: ooxp-qa-rebuild-status
