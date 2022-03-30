@@ -38,28 +38,24 @@ public class BenchmarkManagerImpl implements BenchmarkManager {
         List<String> impalaTables = impalaService.getTables(instanceName);
 
         StringBuilder sb = new StringBuilder();
-        int moved = 0;
-        int notPresent = 0;
 
         for (String table : impalaTables) {
 
-            Instant begin = Instant.now();
+            Instant tableStart = Instant.now();
 
             int count = impalaService.count(table);
 
-            long duration = Duration.between(begin, Instant.now()).getSeconds();
+            long duration = Duration.between(tableStart, Instant.now()).getSeconds();
 
             System.out.printf("%s complete. count: %d   Took %d seconds\n", table, count, duration);
             sb.append(String.format("%s,%d,%d\n", table, count, duration));
-            moved++;
         }
 
         System.out.println("=========================================================");
         System.out.println("Table,Rows,Duration");
         System.out.println(sb);
         System.out.println("=========================================================");
-        System.out.printf(" Locators: %d     Moved: %d     Table not present: %d   Total time: %.2f mins\n",
-                moved + notPresent, moved, notPresent, Duration.between(start, Instant.now()).getSeconds() / 60f);
+        System.out.printf(" Total time: %.2f mins\n",                 Duration.between(start, Instant.now()).getSeconds() / 60f);
         System.out.println("=========================================================");
 
         // write logic here
