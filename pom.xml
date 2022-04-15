@@ -72,7 +72,32 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
-
+        <!--Impala -->
+        <dependency>
+            <groupId>ooxp.com.cloudera.impala.jdbc</groupId>
+            <artifactId>hive_metastore</artifactId>
+            <version>${impala.jdbc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ooxp.com.cloudera.impala.jdbc</groupId>
+            <artifactId>hive_service</artifactId>
+            <version>${impala.jdbc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ooxp.com.cloudera.impala.jdbc</groupId>
+            <artifactId>ImpalaJDBC41</artifactId>
+            <version>${impala.jdbc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ooxp.com.cloudera.impala.jdbc</groupId>
+            <artifactId>ql</artifactId>
+            <version>${impala.jdbc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ooxp.com.cloudera.impala.jdbc</groupId>
+            <artifactId>TCLIServiceClient</artifactId>
+            <version>${impala.jdbc.version}</version>
+        </dependency>
 
         <!-- Lombok -->
         <dependency>

@@ -1,0 +1,1 @@
+select a32f61e0_e884_11ea_ae22_f328fa2fcd28,a32f61e1_e884_11ea_ae22_f328fa2fcd28,rowid,formulaname , steps , usedinformula , components , numerator , denominator , parentid , referencerowid , stage , ruleid , rulename , ruletype , sequencename , lastupdateby , lastupdatedate , action , filetype , externalperiod , adjustment from ooxp_v9m_narsinew_251806346041127_prereportready;

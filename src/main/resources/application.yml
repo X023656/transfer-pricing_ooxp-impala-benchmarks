@@ -1,3 +1,14 @@
 spring:
   profiles:
     active: local
+
+
+file:
+  table:
+    path: C:\aws-python\Benchmark\table.csv
+    result:
+      path: C:\aws-python\Benchmark\table-count-elapse.csv
+  query:
+    path: C:\aws-python\Benchmark\Queries.txt
+    result:
+      path: C:\aws-python\Benchmark\table-select-elapse.csv
